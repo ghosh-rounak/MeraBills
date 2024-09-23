@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MeraBills</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="rupee_sign">₹</string>
+    <string name="amount">Amount</string>
+    <string name="select">Select</string>
+    <string name="provider_icici_citibank_etc">Provider (ICICI,Citibank,etc.)</string>
+    <string name="transaction_reference">Transaction reference</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="total_amount">Total Amount = ₹</string>
+    <string name="save">Save</string>
+    <string name="add_payment2">Add payment</string>
+    <string name="payments">Payments</string>
+</resources>

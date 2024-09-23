@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addPaymentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardBackgroundColor="@android:color/white"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:fillViewport="true"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            >
+
+            <TextView
+                android:id="@+id/headerTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="start"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                android:text="@string/add_payment"
+                />
+
+            <TextView
+                android:id="@+id/rsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rupee_sign"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/inputAmountField"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAmountField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:hint="@string/amount"
+                app:counterEnabled="false"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rsTV"
+                app:layout_constraintTop_toBottomOf="@+id/headerTV"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputAmount"
+                    android:maxLength="8"
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropdownField"
+                app:helperTextEnabled="false"
+                app:errorEnabled="true"
+                app:layout_constraintStart_toStartOf="@+id/rsTV"
+                app:layout_constraintEnd_toEndOf="@+id/inputAmountField"
+                app:layout_constraintTop_toBottomOf="@+id/inputAmountField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/select"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/extraInputField1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/provider_icici_citibank_etc"
+                app:counterEnabled="false"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                app:layout_constraintTop_toBottomOf="@+id/dropdownField"
+                app:layout_constraintEnd_toEndOf="@+id/dropdownField"
+                app:layout_constraintStart_toStartOf="@+id/dropdownField"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/extraInputField2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/transaction_reference"
+                app:counterEnabled="false"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                app:layout_constraintTop_toBottomOf="@+id/extraInputField1"
+                app:layout_constraintEnd_toEndOf="@+id/extraInputField1"
+                app:layout_constraintStart_toStartOf="@+id/extraInputField1"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/okBtn"
+                android:text="@string/ok"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/extraInputField2"
+                app:layout_constraintEnd_toEndOf="@+id/dropdownField"
+                />
+
+            <Button
+                android:id="@+id/cancelBtn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@+id/okBtn"
+                app:layout_constraintEnd_toStartOf="@+id/okBtn"
+                android:layout_marginEnd="@dimen/_2sdp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</com.google.android.material.card.MaterialCardView>
+
